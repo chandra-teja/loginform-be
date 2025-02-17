@@ -11,11 +11,15 @@ app.get("/", (req, res) => {
 });
 
 app.post("/api/callback", (req, res) => {
-  console.log(req.body, "callback api reqbody");
-  res.send({
-    message: "Callback received",
-    request: req,
-  });
+  try {
+    console.log(req.body, "callback api reqbody");
+    res.send({
+      message: "Callback received",
+      request: req,
+    });
+  } catch (err) {
+    console.log("callback api error", err);
+  }
 });
 
 app.listen(port, () => console.log(`Server is running on port - ${port}`));

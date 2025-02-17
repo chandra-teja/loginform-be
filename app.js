@@ -6,11 +6,12 @@ const port = process.env.PORT || 8080;
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("Hello World");
+  console.log("get api called");
+  res.send("get api called");
 });
 
 app.post("/api/callback", (req, res) => {
-  console.log(req.body);
+  console.log(req.body, "callback api reqbody");
   res.send({
     message: "Callback received",
     request: req,
@@ -18,3 +19,4 @@ app.post("/api/callback", (req, res) => {
 });
 
 app.listen(port, () => console.log(`Server is running on port - ${port}`));
+module.exports = app;

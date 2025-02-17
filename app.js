@@ -1,10 +1,11 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const port = process.env.PORT || 8080;
 
 // Middleware to parse JSON bodies
 app.use(express.json());
-
+app.use(cors());
 app.get("/", (req, res) => {
   console.log("get api called");
   res.send("get api called");

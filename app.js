@@ -33,7 +33,7 @@ app.get("/api/callback", (req, res) => {
 app.post("/api/callback", (req, res) => {
   const { requestId, accessToken } = req.query;
   try {
-    console.log(req.body, "callback api reqbody");
+    console.log(req.body, "callback api reqbody post");
     console.log(`Request ID: ${requestId}, Token: ${accessToken}`);
     res.send({
       message: "Callback received",
